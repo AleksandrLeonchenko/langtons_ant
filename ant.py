@@ -31,14 +31,23 @@ def move_ant(x: int, y: int, direction: int, field: np.ndarray) -> tuple[int, in
     Returns:
     - tuple[int, int]: Новые координаты муравья после изменения положения.
     """
+    # if direction == 0:  # Вверх
+    #     return (x, (y - 1) % field.shape[0])
+    # elif direction == 1:  # Вправо
+    #     return ((x + 1) % field.shape[1], y)
+    # elif direction == 2:  # Вниз
+    #     return (x, (y + 1) % field.shape[0])
+    # elif direction == 3:  # Влево
+    #     return ((x - 1) % field.shape[1], y)
+
     if direction == 0:  # Вверх
         return (x, (y - 1) % field.shape[0])
     elif direction == 1:  # Вправо
-        return ((x + 1) % field.shape[1], y)
+        return ((x - 1) % field.shape[1], y)
     elif direction == 2:  # Вниз
         return (x, (y + 1) % field.shape[0])
     elif direction == 3:  # Влево
-        return ((x - 1) % field.shape[1], y)
+        return ((x + 1) % field.shape[1], y)
 
 
 def reached_boundary(x: int, y: int, width: int, height: int) -> bool:
