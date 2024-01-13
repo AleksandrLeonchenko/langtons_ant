@@ -15,7 +15,9 @@ def field_init(width: int, height: int) -> np.ndarray:  # Инициализац
     Returns:
     - np.ndarray: Инициализированное поле.
     """
-    return np.zeros((height, width), dtype=np.uint8)
+    # return np.zeros((height, width), dtype=np.uint8)
+    return np.ones((height, width), dtype=np.uint8) * 255  # Изначально поле белое
+
 
 
 def move_ant(x: int, y: int, direction: int, field: np.ndarray) -> tuple[int, int]:
